@@ -11,6 +11,7 @@ pipeline{
     stage("run"){
     steps{
     sh '''
+    docker rm -f nginx5 | exit 0
     docker run -d -p 8999:80 nginx5
     '''
      }
